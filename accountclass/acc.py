@@ -1,5 +1,5 @@
 class Account:
     def __init__(self, number, name, balance):
-        self.number=number
+        self.number=str(number)
         self.name=name
-        self.balance=balance
+        self.balance=int(balance)
