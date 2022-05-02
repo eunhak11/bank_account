@@ -65,4 +65,5 @@ def withdraw(acc_list):  # 출금하기
 def account_inquiry(acc_list):
     for account in acc_list:
         account.print_info()
-        print("==출력되었습니다.==")
+
+    print("==출력되었습니다.==")
