@@ -1,4 +1,5 @@
 from func import *
+from func import calcLoan
 
 acc_list = []  #account list
 
@@ -17,7 +18,8 @@ while(True):
     elif(choice == 4):
         account_inquiry(acc_list)
 
-    # elif(choice == 5):
+    elif(choice == 5):
+        loan(acc_list)
 
     elif(choice == 6):
         print("##프로그램을 종료합니다##")
@@ -25,3 +27,5 @@ while(True):
 
     else:
         print("===잘못된 입력입니다.===")
+    
+    calcLoan(acc_list)

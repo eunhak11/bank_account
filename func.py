@@ -1,6 +1,6 @@
 from accountclass.acc import Account
 def showMenu():
-    print("====Bank Menu====\n1. 계좌개설\n2. 입금하기\n3. 출금하기\n4. 전체조회\n6.프로그램 종료\n================\n")
+    print("====Bank Menu====\n1. 계좌개설\n2. 입금하기\n3. 출금하기\n4. 전체조회\n5.대출받기\n6.프로그램 종료\n================\n")
 
 def selectMenu():
     c=int(input("입력: "))
@@ -68,3 +68,29 @@ def account_inquiry(acc_list):
         account.print_info()
 
     print("==출력되었습니다.==")
+
+def loan(acc_list):
+    print("어느 계좌로 대출을 받으시겠습니까?\n")
+    acc_num=int(input("계좌번호 입력:" ))
+    index=0
+    for i in range(0, len(acc_list)):
+        if(acc_list[i].name==acc_num):
+            index = i
+            break
+        elif(i==len(acc_list)):
+            print("##대출 받으려는 계좌가 없습니다##")
+            return
+
+    acc_list[index].haveLoan(True)
+    print(acc_list[index].name+"님, 이제부터 10원씩 이자가 빠져나갑니다.\n")
+
+def calcLoan(acc_list):
+    for i in acc_list:
+        if(i.loan == False):
+            continue
+        else:
+            i.balance-=10
+            print(str(i.name)+"님, 이자 자동이체 후 잔고가 "+str(i.balance)+"원 남았습니다.\n")
+            if(i.balance<0):
+                print(str(i.name)+"님, 파산입니다.\n")
+                i.haveLoan(False)
