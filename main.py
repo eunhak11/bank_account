@@ -1,25 +1,26 @@
 from func import *
 
-acc_list = []  #account list
+acc_list = []
 
-while(True):
+while True:
     showMenu()
-    choice= selectMenu()
-    if(choice == 1):
+    choice = selectMenu()
+    if choice == 1:
         acc_list.append(openAccount())
 
-    elif(choice == 2):
+    elif choice == 2:
         deposit(acc_list)
 
-    elif(choice == 3):
+    elif choice == 3:
         withdraw(acc_list)
 
-    elif(choice == 4):
+    elif choice == 4:
         account_inquiry(acc_list)
 
-    # elif(choice == 5):
+    elif choice == 5:
+        delete(acc_list)
 
-    elif(choice == 6):
+    elif choice == 6:
         print("##프로그램을 종료합니다##")
         break
 
