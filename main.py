@@ -1,10 +1,9 @@
 from func import *
-from func import selectMenu
-from func import openAccount
 
 acc_list = []  #account list
 
 while(True):
+    showMenu()
     choice= selectMenu()
     if(choice == 1):
         acc_list.append(openAccount())
@@ -21,6 +20,7 @@ while(True):
     # elif(choice == 5):
 
     elif(choice == 6):
+        print("##프로그램을 종료합니다##")
         break
 
     else:

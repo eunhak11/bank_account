@@ -1,7 +1,8 @@
 from accountclass.acc import Account
+def showMenu():
+    print("====Bank Menu====\n1. 계좌개설\n2. 입금하기\n3. 출금하기\n4. 전체조회\n6.프로그램 종료\n================\n")
 
 def selectMenu():
-    print("=====BANK MENU=====\n")
     c=int(input("입력: "))
     return c
 
